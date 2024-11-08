@@ -3,20 +3,18 @@ name: CI/CD Pipeline
 on:
   release:
     types: [published]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v4
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./site
+          keep_files: true
           publish_branch: gh-pages
           destination: /Lab4/v${{ github.ref_name }}/
   
