@@ -18,5 +18,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./ # Замените на директорию с собранным приложением (например, `dist`)
         publish_branch: gh-pages
-        destination: /Lab4/v${{ github.ref_name }}
+        destination: /Lab4/v${{ github.ref_name }}/
   
