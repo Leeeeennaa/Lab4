@@ -15,6 +15,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./ 
-          publish_branch: gh-pages 
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ # Замените на директорию с собранным приложением (например, `dist`)
+          publish_branch: gh-pages
+          destination: /Lab4/v${{ github.ref_name }}/
+  
